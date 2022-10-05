@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var hamburgerAndFriesPrice              = 9.95;
+    var soupAndSaladPrice                   = 13.50;
+    var turkeyWrapAndVeggiesPrice           = 7.95;
+    var hotDogAndOnionRingsPrice            = 11.50;
+
+    var hamburgerAndFriesString             = "Hamburger and Fries: $9.95";
+    var soupAndSaladPriceString             = "Soup and Salad: $13.50";
+    var turkeyWrapAndVeggiesString          = "Turkey Wrap and Veggies: $7.95";
+    var hotDogAndOnionRingsPriceString      = "Hot Dog and Onion Rings: $11.50";
+
+    var totalCustomer = 0;
+    var totalNumberMeals = 0;
+    var grandTotal = 0;
+    var counter = 4;
+
+    var countA = 0;
+    var countB = 0;
+    var countC = 0;
+    var countD = 0;
+
+    var totalCount = 0;
+
+    var totalA = 0;
+    var totalB = 0;
+    var totalC = 0;
+    var totalD = 0;
+
+    var currentCustomer = 0;
+
+
+  //To begin, gather the following input from the user using a prompt:
+   var numberOfCustomer = prompt("How many people are ordering food?", 4);
+  // How many people are ordering food? Default value is “4”
+
+  //Then, using a loop, repeat the following processes until all orders are placed:
+  // o Display the current user number (For example: Hello customer #1. Any message that is
+  // personalized is correct)
+  // o Display a Menu with the following letter options (A, B, C, D), feel free to make your
+  // own names and prices:
+  //         A - Hamburger and Fries: $9.95
+  // B - Soup and Salad: $13.50
+  // C - Turkey Wrap and Veggies: $7.95
+  // D - Hot Dog and Onion Rings: $11.50
+
+    // o Prompt the user to enter a letter option (A, B, C, D)
+
+
+
+  do {
+
+    currentCustomer = currentCustomer + 1;
+    var userSelectMeal = prompt("Hello Customer #" + currentCustomer + "\n" +
+        "Enter meal option (A, B, C, D)" + "\n" +
+        "A -" + hamburgerAndFriesString + "\n" +
+        "B -" + soupAndSaladPriceString + "\n" +
+        "C -" + turkeyWrapAndVeggiesString + "\n" +
+        "D -" + hotDogAndOnionRingsPriceString + "\n");
+
+    // o Based on the letter option entered, display the following message:
+    // “You have selected: “ + the name of the meal option
+    // o Prompt the user to enter the number of meals they would like to order
+
+    if (userSelectMeal == "A") {
+      var userNumberOfMeals = prompt("You have selected: " + hamburgerAndFriesString + "\n" +
+          "How many meals would you like to order?");
+      countA = countA + 1;
+      totalA = totalA + userNumberOfMeals;
+    } else if (userSelectMeal == "B") {
+      var userNumberOfMeals = prompt("You have selected: " + soupAndSaladPriceString + "\n" +
+          "How many meals would you like to order?");
+      countB = countB + 1;
+      totalB = totalB + userNumberOfMeals;
+    } else if (userSelectMeal == "C") {
+      var userNumberOfMeals = prompt("You have selected: " + turkeyWrapAndVeggiesString + "\n" +
+          "How many meals would you like to order?");
+      countC = countC + 1;
+      totalC = totalC + userNumberOfMeals;
+    } else if (userSelectMeal == "D") {
+      var userNumberOfMeals = prompt("You have selected: " + hotDogAndOnionRingsPriceString + "\n" +
+          "How many meals would you like to order?");
+      countD = countD + 1;
+      totalD = totalD + userNumberOfMeals;
+    }
+
+
+
+    if (currentCustomer == numberOfCustomer) {
+        break;
+    }
+
+
+       numberOfCustomer++;
+  } while (numberOfCustomer <= 4);
+
+</script>
+</body>
+</html>
