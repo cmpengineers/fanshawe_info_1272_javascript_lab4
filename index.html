@@ -10,67 +10,127 @@
 <script>
 
     //begin, gather the following input from the user using a prompt:
-    var numberOfPeople = prompt("How many people are ordering food?", 4);
+
 
     var hamburgerAndFriesPrice       = 9.95;
     var soupAndSaladPrice            = 13.50;
     var turkeyWrapAndVeggiesPrice    = 7.95;
     var hotDogAndOnionRingsPrice     = 11.50;
 
-    var hamburgerAndFriesString             = "Hamburger and Fries: $";
-    var soupAndSaladPriceString             = "Soup and Salad: $";
-    var turkeyWrapAndVeggiesString          = "Turkey Wrap and Veggies: $";
-    var hotDogAndOnionRingsPriceString      = "Hot Dog and Onion Rings: $";
+    var hamburgerAndFriesString             = "Hamburger and Fries: $9.95";
+    var soupAndSaladPriceString             = "Soup and Salad: $13.50";
+    var turkeyWrapAndVeggiesString          = "Turkey Wrap and Veggies: $7.95";
+    var hotDogAndOnionRingsPriceString      = "Hot Dog and Onion Rings: $11.50";
 
-    var totalCustomer;
+    var totalCustomer = 0;
+    var totalNumberMeals = 0;
+    var grandTotal = 0;
+    var counter = 4;
+
+    var countA = 0;
+    var countB = 0;
+    var countC = 0;
+    var countD = 0;
+
+    var totalCount = 0;
+
+    var totalA = 0;
+    var totalB = 0;
+    var totalC = 0;
+    var totalD = 0;
+
+    var currentCustomer = 0;
+
+    var userReorderAnotherMeal = true;
 
 
-    while (numberOfPeople <= 4) {
-        var userSelectMeal = prompt("Hello Customer #" + numberOfPeople + "\n" +
-                                    "A -"+ hamburgerAndFriesString + hamburgerAndFriesPrice + "\n" +
-                                    "B -"+ soupAndSaladPriceString + soupAndSaladPrice + "\n" +
-                                    "C -"+ turkeyWrapAndVeggiesString + turkeyWrapAndVeggiesString + "\n" +
-                                    "D -"+ hotDogAndOnionRingsPriceString + hotDogAndOnionRingsPrice
-                                    );
+    var numberOfCustomers = prompt("How many people are ordering food?", counter);
+
+    while (numberOfCustomers <= counter) {
+          //do {
+        //for (var i = 0; i  <= numberOfCustomers; i++) {
+
+        var userSelectMeal = prompt("Hello Customer #" + numberOfCustomers + "\n" +
+            "Enter meal option (A, B, C, D)" + "\n" +
+            "A -" + hamburgerAndFriesString + "\n" +
+            "B -" + soupAndSaladPriceString + "\n" +
+            "C -" + turkeyWrapAndVeggiesString + "\n" +
+            "D -" + hotDogAndOnionRingsPriceString
+        );
 
 
-        if (userSelectMeal === "A") {
 
-            totalCustomer += hamburgerAndFriesPrice;
 
-        } else if ( userSelectMeal === "B") {
+      //  do  {
+            if (userSelectMeal === "A") {
+               countA++;
+                  console.log("countA " + countA);
+                // break;
+                hamburgerAndFriesPrice = parseFloat(hamburgerAndFriesPrice);
+                totalA = hamburgerAndFriesPrice * countA;
+                console.log("totalA" + totalA)
 
-            totalCustomer += soupAndSaladPrice;
+               // break;
+            } else if (userSelectMeal === "B") {
+                countB++;
 
-        } else if (userSelectMeal === "C") {
+                soupAndSaladPrice = parseFloat(soupAndSaladPrice);
+                totalB = soupAndSaladPrice * countB;
 
-            totalCustomer += turkeyWrapAndVeggiesPrice;
+            } else if (userSelectMeal === "C") {
+             countC++;
 
-        } else if (userSelectMeal === "D") {
+                turkeyWrapAndVeggiesPrice = parseFloat(turkeyWrapAndVeggiesPrice);
+                totalC = turkeyWrapAndVeggiesPrice * countC;
 
-            totalCustomer += hotDogAndOnionRingsPrice;
+            } else if (userSelectMeal === "D") {
+                countD++
+
+                hotDogAndOnionRingsPrice = parseFloat(hotDogAndOnionRingsPrice);
+                totalD = hotDogAndOnionRingsPrice * countD;
+            }
+
+     //   } while (userReorderAnotherMeal === true);
+
+
+        console.log(userReorderAnotherMeal);
+
+
+
+        grandTotal = totalA + totalB + totalC + totalD;
+
+        totalCount = countA + countB + countC + countD;
+
+              console.log("Customer " + numberOfCustomers + " here is your order:");
+              console.log(countA + " of Meal Option A");
+              console.log(countB + " of Meal Option B");
+              console.log(countC + " of Meal Option C");
+              console.log(countD + " of Meal Option D");
+              console.log(" The total for your "+ totalCount  + " meal(s) is : $" + grandTotal.toFixed(2));
+
+
+
+        userReorderAnotherMeal = confirm("Would you like to order another meal");
+
+        if (userReorderAnotherMeal === false) {
+            break;
         }
 
+        numberOfCustomers++;
+        //   }
 
-
-           var userReorderAnotherMeal = confirm("Would you like to order another meal");
-
-
-
-        console.log("Customer" + numberOfPeople + "here is your order:");
-        console.log( + "of Meal Option A");
-        console.log( + "of Meal Option B");
-        console.log( + "of Meal Option C");
-        console.log( + "of")
-
-
+       // } while (numberOfCustomers < counter);
     }
 
 
 
 
-
-
+    console.log("-------------------------------------------------");
+    console.log("Total number of Meal A: " + "");
+    console.log("Total number of Meal B: " + "");
+    console.log("Total number of Meal C:" + "");
+    console.log("Total number of Meal D: " + "");
+    console.log("The grand total for " + numberOfCustomers + " customers is $" + grandTotal.toFixed(2) * numberOfCustomers);
 </script>
 </body>
 </html>
