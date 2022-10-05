@@ -10,7 +10,63 @@
 <script>
 
     //begin, gather the following input from the user using a prompt:
-    var NumberOfPeople = prompt("How many people are ordering food?", 4);
+    var numberOfPeople = prompt("How many people are ordering food?", 4);
+
+    var hamburgerAndFriesPrice       = 9.95;
+    var soupAndSaladPrice            = 13.50;
+    var turkeyWrapAndVeggiesPrice    = 7.95;
+    var hotDogAndOnionRingsPrice     = 11.50;
+
+    var hamburgerAndFriesString             = "Hamburger and Fries: $";
+    var soupAndSaladPriceString             = "Soup and Salad: $";
+    var turkeyWrapAndVeggiesString          = "Turkey Wrap and Veggies: $";
+    var hotDogAndOnionRingsPriceString      = "Hot Dog and Onion Rings: $";
+
+    var totalCustomer;
+
+
+    while (numberOfPeople <= 4) {
+        var userSelectMeal = prompt("Hello Customer #" + numberOfPeople + "\n" +
+                                    "A -"+ hamburgerAndFriesString + hamburgerAndFriesPrice + "\n" +
+                                    "B -"+ soupAndSaladPriceString + soupAndSaladPrice + "\n" +
+                                    "C -"+ turkeyWrapAndVeggiesString + turkeyWrapAndVeggiesString + "\n" +
+                                    "D -"+ hotDogAndOnionRingsPriceString + hotDogAndOnionRingsPrice
+                                    );
+
+
+        if (userSelectMeal === "A") {
+
+            totalCustomer += hamburgerAndFriesPrice;
+
+        } else if ( userSelectMeal === "B") {
+
+            totalCustomer += soupAndSaladPrice;
+
+        } else if (userSelectMeal === "C") {
+
+            totalCustomer += turkeyWrapAndVeggiesPrice;
+
+        } else if (userSelectMeal === "D") {
+
+            totalCustomer += hotDogAndOnionRingsPrice;
+        }
+
+
+
+           var userReorderAnotherMeal = confirm("Would you like to order another meal");
+
+
+
+        console.log("Customer" + numberOfPeople + "here is your order:");
+        console.log( + "of Meal Option A");
+        console.log( + "of Meal Option B");
+        console.log( + "of Meal Option C");
+        console.log( + "of")
+
+
+    }
+
+
 
 
 
