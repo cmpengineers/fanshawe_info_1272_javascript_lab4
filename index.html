@@ -43,6 +43,11 @@
 
     var currentCustomer = 0;
 
+   var totalCountA =0;
+   var totalCountB =0;
+   var totalCountC =0;
+   var totalCountD =0;
+
     var userReorderAnotherMeal = false;
 
     var numberOfCustomers = prompt("How many people are ordering food?", counter);
@@ -67,6 +72,7 @@
                    countA++;
                    hamburgerAndFriesPrice = parseFloat(hamburgerAndFriesPrice);
                    totalA = hamburgerAndFriesPrice * countA;
+                   totalCountA = countA;
 
 
                } else if (userSelectMeal === "B") {
@@ -74,23 +80,31 @@
                    countB++;
                    soupAndSaladPrice = parseFloat(soupAndSaladPrice);
                    totalB = soupAndSaladPrice * countB;
+                   totalCountB = countB;
 
                } else if (userSelectMeal === "C") {
 
                    countC++;
                    turkeyWrapAndVeggiesPrice = parseFloat(turkeyWrapAndVeggiesPrice);
                    totalC = turkeyWrapAndVeggiesPrice * countC;
+                   totalCountC = countC;
 
                } else if (userSelectMeal === "D") {
                    countD++
                    hotDogAndOnionRingsPrice = parseFloat(hotDogAndOnionRingsPrice);
                    totalD = hotDogAndOnionRingsPrice * countD;
+                   totalCountD = countD;
                }
 
                 userReorderAnotherMeal = confirm("Would you like to order another meal?");
                 if (userReorderAnotherMeal === false) {
+
                     break;
+
                 }
+
+
+
            }
 
 
@@ -107,22 +121,23 @@
                   console.log(countD + " of Meal Option D");
                   console.log(" The total for your "+ totalCount  + " meal(s) is : $" + grandTotal.toFixed(2));
 
+                    countC =0;
+                    countB =0;
+                    countA =0;
+                    countD =0;
 
 
 
     } while (currentCustomer < numberOfCustomers);
 
                 console.log("-------------------------------------------------");
-                console.log("Total number of Meal A: " + countA);
-                console.log("Total number of Meal B: " + countB);
-                console.log("Total number of Meal C: " + countC);
-                console.log("Total number of Meal D: " + countD);
+                console.log("Total number of Meal A: " + totalCountA);
+                console.log("Total number of Meal B: " + totalCountB);
+                console.log("Total number of Meal C: " + totalCountC);
+                console.log("Total number of Meal D: " + totalCountD);
                 console.log("The grand total for " + currentCustomer + " customers is $" + grandTotal.toFixed(2));
 
-                countA = 0;
-                countB = 0;
-                countC = 0;
-                countD = 0;
+
 
 
 </script>
